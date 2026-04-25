@@ -16,13 +16,13 @@ export function Header() {
         <nav className="flex items-center gap-6 md:gap-10 text-[15px] md:text-[17px] text-black">
           <Link
             href="/"
-            className={!isAbout ? "underline underline-offset-[6px]" : ""}
+            className={!isAbout ? "underline" : ""}
           >
             Work
           </Link>
           <Link
             href="/about"
-            className={isAbout ? "underline underline-offset-[6px]" : ""}
+            className={isAbout ? "underline" : ""}
           >
             About
           </Link>
