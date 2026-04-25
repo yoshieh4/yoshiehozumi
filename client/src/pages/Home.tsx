@@ -17,7 +17,7 @@ function ProjectRow({ project, eager }: { project: Project; eager: boolean }) {
     <article className="border-b border-[var(--color-rule)]">
       <Link
         href={`/${project.slug}`}
-        className="block py-10 md:py-14 lg:py-16 hover:opacity-100"
+        className="block py-10 md:py-14 lg:py-16 no-underline hover:opacity-100"
       >
         <div className="grid grid-cols-1 md:grid-cols-[5fr_8fr] gap-y-8 md:gap-x-10 lg:gap-x-14">
           <div className="flex flex-col">
