@@ -22,10 +22,10 @@ export default function Project() {
   return (
     <article className="max-w-5xl mx-auto px-6 md:px-10 pb-24">
       <header className="mb-8">
-        <h1 className="text-2xl md:text-4xl font-medium">{project.title}</h1>
-        {project.client && (
-          <p className="mt-2 text-neutral-600">{project.client}</p>
-        )}
+        <h1 className="text-[28px] md:text-[34px] leading-[1.15] font-normal">
+          {project.series && <span className="block">{project.series}</span>}
+          <span className="block">{project.title}</span>
+        </h1>
       </header>
 
       {hero && (
