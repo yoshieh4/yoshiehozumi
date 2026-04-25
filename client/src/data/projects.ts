@@ -10,9 +10,9 @@ export type ProjectMedia = {
 
 export type Project = {
   slug: string;
+  series?: string;
   title: string;
-  client?: string;
-  year?: string;
+  appleLogo?: boolean;
   description: string;
   awards?: string[];
   thumbnail: ProjectMedia;
@@ -24,13 +24,15 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "thewaitingroom",
-    title: "Privacy: The Waiting Room",
-    client: "Apple",
+    series: "Privacy",
+    title: "The Waiting Room",
+    appleLogo: true,
     description:
-      "A campaign exploring health data privacy on iPhone.",
+      "What if your health data wasn't as private as you thought? Unless you're on an iPhone.",
     awards: [
-      "D&AD — Graphite & Wood Pencils",
-      "One Show — Silver & 2× Bronze",
+      "D&AD Graphite & Wood Pencils",
+      "One Show Silver & 2x Bronze",
+      "ANDYs Gold",
     ],
     thumbnail: {
       type: "image",
@@ -40,12 +42,15 @@ export const projects: Project[] = [
   },
   {
     slug: "verticalcinema",
-    title: "Vertical Cinema: Shot on iPhone",
-    client: "Apple",
+    series: "Vertical Cinema",
+    title: "Shot on iPhone",
     description:
-      "A film celebrating the history of cinema, shot vertically on iPhone.",
+      "A love letter to the history of cinema in the format of our current generation.",
     awards: [
-      "Cannes Lions — Grand Prix, Gold, Silver, Bronze",
+      "D&AD Yellow, Graphite, and 2x Wood Pencils",
+      "Cannes Lions Grand Prix, Gold, Silver, and Bronze",
+      "One Show 4x Gold, 3x Silver",
+      "Webby",
     ],
     thumbnail: {
       type: "image",
@@ -55,10 +60,11 @@ export const projects: Project[] = [
   },
   {
     slug: "election",
-    title: "iPad Air: Election",
-    client: "Apple",
+    series: "iPad Air",
+    title: "Election",
+    appleLogo: true,
     description:
-      "High schoolers put iPad through its paces in a mock election.",
+      "Exactly how useful can an iPad be? We had a few high schoolers put it to the test.",
     thumbnail: {
       type: "image",
       src: "/projects/election.gif",
@@ -68,9 +74,9 @@ export const projects: Project[] = [
   {
     slug: "shotoniphone",
     title: "Shot on iPhone",
-    client: "Apple",
     description:
-      "Selected contributions to the long-running Shot on iPhone campaign.",
+      "A few pieces I contributed to the 'Shot on iPhone' campaign platform.",
+    awards: ["Cannes Lions Grand Prix — Shot on iPhone platform"],
     thumbnail: {
       type: "image",
       src: "/projects/theweeknd.gif",
@@ -79,22 +85,24 @@ export const projects: Project[] = [
   },
   {
     slug: "startup",
-    title: "Startup: 45 Years of Apple Sounds",
-    client: "Apple",
+    series: "Startup",
+    title: "45 Years of Apple Sounds",
+    appleLogo: true,
     description:
-      "An audio composition assembled from 45 years of Apple sounds, made for the Apple keynote.",
+      "A bespoke track made out of Apple sounds to open the Keynote event.",
+    awards: ["Cannes 2x Silver", "Clio Gold", "One Show Silver"],
     thumbnail: {
       type: "image",
       src: "/projects/startup.gif",
-      alt: "Startup",
+      alt: "Startup: 45 Years of Apple Sounds",
     },
   },
   {
     slug: "guided-tour",
     title: "The Can't Decide Guide",
-    client: "Apple",
     description:
-      "A nine-minute guide to choosing the right iPhone — reaching 1.25M views a day.",
+      "Every year there is a collection of new iPhones. Which one will you choose?",
+    awards: ["This 9 min film gets 1.25M views a day"],
     thumbnail: {
       type: "image",
       src: "/projects/guided-tour.gif",
