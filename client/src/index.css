@@ -25,3 +25,14 @@ a {
 a:hover {
   opacity: 0.65;
 }
+
+@keyframes twirl {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.twirl {
+  display: inline-block;
+  animation: twirl 3s linear infinite;
+  transform-origin: 50% 50%;
+}
