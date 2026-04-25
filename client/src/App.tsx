@@ -1,14 +1,22 @@
+import { Switch, Route } from "wouter";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import Home from "@/pages/Home";
+import About from "@/pages/About";
+import Project from "@/pages/Project";
+
 export default function App() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-6">
-      <div className="max-w-xl text-center">
-        <h1 className="text-4xl md:text-5xl font-light tracking-tight mb-4">
-          Yoshie Hozumi
-        </h1>
-        <p className="text-lg text-neutral-500 italic">
-          Coming soon.
-        </p>
-      </div>
-    </main>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/:slug" component={Project} />
+        </Switch>
+      </main>
+      <Footer />
+    </div>
   );
 }
