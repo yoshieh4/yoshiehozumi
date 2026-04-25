@@ -1,18 +1,35 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 
 export function Header() {
+  const [location] = useLocation();
+  const isWork = location === "/" || (!location.startsWith("/about") && location !== "/about");
+  const isAbout = location === "/about";
+
   return (
-    <header className="w-full px-6 md:px-10 py-6 flex items-center justify-between">
-      <Link
-        href="/"
-        className="text-base md:text-lg font-medium tracking-tight"
-      >
-        Yoshie Hozumi
-      </Link>
-      <nav className="flex gap-6 text-sm md:text-base">
-        <Link href="/">Work</Link>
-        <Link href="/about">About</Link>
-      </nav>
+    <header className="w-full px-6 sm:px-10 lg:px-14">
+      <div className="flex items-center justify-between py-6 md:py-8">
+        <Link
+          href="/"
+          className="text-[22px] md:text-[28px] lg:text-[31px] leading-tight text-black"
+        >
+          Yoshie Hozumi
+        </Link>
+        <nav className="flex items-center gap-6 md:gap-10 text-[15px] md:text-[17px] text-black">
+          <Link
+            href="/"
+            className={isWork && !isAbout ? "underline underline-offset-[6px]" : ""}
+          >
+            Work
+          </Link>
+          <Link
+            href="/about"
+            className={isAbout ? "underline underline-offset-[6px]" : ""}
+          >
+            About
+          </Link>
+        </nav>
+      </div>
+      <hr className="border-[var(--color-rule)]" />
     </header>
   );
 }
