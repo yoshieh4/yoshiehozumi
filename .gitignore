@@ -6,3 +6,6 @@ dist/
 .DS_Store
 *.log
 .vite/
+
+# Local working folder for assets being prepared (originals live in client/public/)
+_assets/
