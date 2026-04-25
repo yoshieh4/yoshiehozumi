@@ -11,13 +11,16 @@ export default function Home() {
               href={`/${p.slug}`}
               className="block group"
             >
-              <div className="aspect-video w-full overflow-hidden bg-neutral-100">
+              <div className="aspect-video w-full overflow-hidden bg-neutral-100 relative">
                 {p.thumbnail.type === "image" ? (
                   <img
                     src={p.thumbnail.src}
                     alt={p.thumbnail.alt ?? p.title}
                     loading={i < 2 ? "eager" : "lazy"}
                     className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
+                    }}
                   />
                 ) : (
                   <video
