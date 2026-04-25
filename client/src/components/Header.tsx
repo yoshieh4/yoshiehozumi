@@ -2,7 +2,6 @@ import { Link, useLocation } from "wouter";
 
 export function Header() {
   const [location] = useLocation();
-  const isWork = location === "/" || (!location.startsWith("/about") && location !== "/about");
   const isAbout = location === "/about";
 
   return (
@@ -17,7 +16,7 @@ export function Header() {
         <nav className="flex items-center gap-6 md:gap-10 text-[15px] md:text-[17px] text-black">
           <Link
             href="/"
-            className={isWork && !isAbout ? "underline underline-offset-[6px]" : ""}
+            className={!isAbout ? "underline underline-offset-[6px]" : ""}
           >
             Work
           </Link>
