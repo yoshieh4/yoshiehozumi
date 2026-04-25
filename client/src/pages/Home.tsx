@@ -12,27 +12,26 @@ export default function Home() {
               className="block group"
             >
               <div className="aspect-video w-full overflow-hidden bg-neutral-100 relative">
-                {p.thumbnail.type === "image" ? (
-                  <img
-                    src={p.thumbnail.src}
-                    alt={p.thumbnail.alt ?? p.title}
-                    loading={i < 2 ? "eager" : "lazy"}
-                    className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
-                    onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.visibility = "hidden";
-                    }}
-                  />
-                ) : (
-                  <video
-                    src={p.thumbnail.src}
-                    poster={p.thumbnail.poster}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover"
-                  />
-                )}
+                {p.thumbnail.src ? (
+                  p.thumbnail.type === "image" ? (
+                    <img
+                      src={p.thumbnail.src}
+                      alt={p.thumbnail.alt ?? p.title}
+                      loading={i < 2 ? "eager" : "lazy"}
+                      className="w-full h-full object-cover transition-opacity group-hover:opacity-90"
+                    />
+                  ) : (
+                    <video
+                      src={p.thumbnail.src}
+                      poster={p.thumbnail.poster}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                  )
+                ) : null}
               </div>
               <div className="mt-4">
                 <h2 className="text-xl md:text-2xl font-medium">
