@@ -49,7 +49,7 @@ export const projects: Project[] = [
     ],
     thumbnail: {
       type: "image",
-      src: "/projects/verticalcinema-poster.jpg",
+      src: "",
       alt: "Vertical Cinema",
     },
   },
